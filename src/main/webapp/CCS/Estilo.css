@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+
+.centrar {
+	margin-top: 1%;
+	margin-left: 40%;
+	width: 16%;
+	background: #0B7A8B;
+	padding: 2px;
+	border-radius: 20px;
+}
+
+.color {
+	background: #303945;
+}
+
+h2 {
+	color: white;
+}
+
+.DUI {
+	margin-top: 3%;
+	margin-left: 30%;
+	width: 25%;
+	background: white;
+	padding: 2px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+    border : 1px solid;
+   
+}
+
+.consultar {
+	margin-top: 3%;
+	background: #0B7A8B;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	width: 10%;
+	color: white;
+	
+}
+
+input:focus{
+	border: 2px solid #0B7A8B;
+	display:flex;
+    flex-direction:column;
+    box-shadow: none;
+    outline:none;
+}
