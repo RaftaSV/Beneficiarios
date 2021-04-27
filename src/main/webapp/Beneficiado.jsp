@@ -19,7 +19,6 @@
 	<%
 	HttpSession sesion = (HttpSession) request.getSession();
 	String usuSession = String.valueOf(sesion.getAttribute("Nombre"));
-	System.out.print(usuSession + " Nombre usuario");
 	String consulta = String.valueOf(sesion.getAttribute("Consulta"));
 	if (usuSession.equals(null) || usuSession.equals("null") || consulta.equals("Error")) {
 
