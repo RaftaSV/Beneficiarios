@@ -36,16 +36,7 @@ public class controllerPersona extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String dui = request.getParameter("DUI");
-		personas per = new personas();
-		per.setDui(dui);
-		PersonasCLS cls = new PersonasCLS();
-		lista = cls.mostrar(per);
-		if (lista.size() == 1) {
-		response.sendRedirect("Beneficiado.jsp");
-		}else {
-			response.sendRedirect("Error.jsp");
-		}
+
 	}
 
 	/**
@@ -55,15 +46,35 @@ public class controllerPersona extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-
+		// doGet(request, response);
 		
-			for (var i : lista) {
-				request.getSession().setAttribute("Nombre", i.getNombres());
-				request.getSession().setAttribute("Apellido", i.getApellidos());
-				request.getSession().setAttribute("Direccion", i.getDireccion());
+		String dui = request.getParameter("DUI");
+	
+		if (dui.length() == 10) {
+			personas per = new personas();
+			per.setDui(dui);
+			PersonasCLS cls = new PersonasCLS();
+			lista = cls.mostrar(per);
+			if (lista.size() == 1) {
+				for (var i : lista) {
+					request.getSession().setAttribute("Nombre", i.getNombres());
+					request.getSession().setAttribute("Apellido", i.getApellidos());
+					request.getSession().setAttribute("Direccion", i.getDireccion());
+					request.getSession().setAttribute("Consulta","Consulta");
+				}
+				response.sendRedirect("Beneficiado.jsp");
+			
+			} else {
+				request.getSession().setAttribute("Nombre","Consulta");
+				request.getSession().setAttribute("Consulta","Error");	
+				response.sendRedirect("Error.jsp");
 			}
-		
+		} else {
+
+			response.sendRedirect("Consulta.jsp");
+		}
+
+	
 	}
 
 }

@@ -1,5 +1,12 @@
 @charset "ISO-8859-1";
-
+.centrar2 {
+	margin-top: 1%;
+	margin-left: 10%;
+	width: 16%;
+	background: #0B7A8B;
+	padding: 2px;
+	border-radius: 20px;
+}
 .centrar {
 	margin-top: 1%;
 	margin-left: 40%;
@@ -39,6 +46,7 @@ h2 {
 	
 }
 
+
 input:focus{
 	border: 2px solid #0B7A8B;
 	display:flex;
@@ -46,3 +54,4 @@ input:focus{
     box-shadow: none;
     outline:none;
 }
+

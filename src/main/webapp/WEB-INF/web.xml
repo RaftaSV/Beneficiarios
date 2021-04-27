@@ -12,11 +12,21 @@
   	<description></description>
   	<servlet-class>com.Rafa.Controller.controllerPersona</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>controllerCerrar</servlet-name>
+  	<display-name>controllerCerrar</display-name>
+  	<description></description>
+  	<servlet-class>com.Rafa.Controller.controllerCerrar</servlet-class>
+  </servlet>
   
  
   <servlet-mapping>
   	<servlet-name>controllerPersona</servlet-name>
   	<url-pattern>/controllerPersona</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>controllerCerrar</servlet-name>
+  	<url-pattern>/controllerCerrar</url-pattern>
   </servlet-mapping>
   
 </web-app>

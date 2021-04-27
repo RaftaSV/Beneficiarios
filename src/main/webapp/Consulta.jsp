@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-ligth">
-<form action="controllerPersona" method = "post">
+<form action="controllerPersona" method="post">
 	<div class="col-lg-12 color">
 		<center>
 			<h2>

@@ -15,7 +15,19 @@
 <meta charset="UTF-8">
 <title>Lo sentimos</title>
 </head>
-<body>
+<%
+HttpSession sesion = (HttpSession) request.getSession();
+String consulta = String.valueOf(sesion.getAttribute("Consulta"));
+String usuSession = String.valueOf(sesion.getAttribute("Nombre"));
+
+if( consulta.equals("Consulta")|| usuSession.equals(null) || usuSession.equals("null") ) 
+{
+	
+	response.sendRedirect("Consulta.jsp");
+	
+}
+	
+	%>
 	<div class="col-lg-12 color">
 		<center>
 			<h2>
@@ -32,5 +44,13 @@
 		<i class="far fa-sad-cry fa-10x"></i>
 		</center>
 	</form>
+<div class="p-5">
+	<center>
+		<form action="controllerCerrar" method="post">
+			<button class="btn btn-success " name="btnConsultar"
+				value="Consultar">Consultar</button>
+		</form>
+	</center>
+</div>
 </body>
 </html>
