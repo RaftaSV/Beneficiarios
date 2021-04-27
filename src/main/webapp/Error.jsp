@@ -48,7 +48,7 @@ if( consulta.equals("Consulta")|| usuSession.equals(null) || usuSession.equals("
 	<center>
 		<form action="controllerCerrar" method="post">
 			<button class="btn btn-success " name="btnConsultar"
-				value="Consultar">Consultar</button>
+				value="Consultar">Nueva consulta</button>
 		</form>
 	</center>
 </div>
