@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Rafa.DAO.PersonasCLS;
 import com.Rafa.Entidades.personas;
+import com.google.gson.Gson;
 
 /**
  * Servlet implementation class controllerPersona
@@ -48,8 +49,8 @@ public class controllerPersona extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 		
-		String dui = request.getParameter("DUI");
-	
+		String dui = request.getParameter("caja");
+	System.out.println(dui.length());
 		if (dui.length() == 10) {
 			personas per = new personas();
 			per.setDui(dui);
@@ -57,12 +58,20 @@ public class controllerPersona extends HttpServlet {
 			lista = cls.mostrar(per);
 			if (lista.size() == 1) {
 				for (var i : lista) {
-					request.getSession().setAttribute("Nombre", i.getNombres());
+					/* request.getSession().setAttribute("Nombre", i.getNombres());
 					request.getSession().setAttribute("Apellido", i.getApellidos());
 					request.getSession().setAttribute("Direccion", i.getDireccion());
 					request.getSession().setAttribute("Consulta","Consulta");
+				*/
+				Gson json = new Gson();	
+				
+				response.getWriter().append(json.toJson(cls.mostrar(per)));
+				
 				}
-				response.sendRedirect("Beneficiado.jsp");
+		//		response.sendRedirect("Beneficiado.jsp");
+				
+				
+				
 			
 			} else {
 				request.getSession().setAttribute("Nombre","Consulta");
